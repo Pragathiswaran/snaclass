@@ -1,8 +1,13 @@
 <?php
+$signup = false;
+if(isset($_POST['username']) and isset($_POST['email']) and $_POST['password']){
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $result = signup($username,$email , $password);
+    $signup = true;
+}
+
     if($result){
     ?>
         <main class="flex-shrink-0">
