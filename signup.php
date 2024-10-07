@@ -7,9 +7,9 @@
   <body>
     
   <?load_temaplte('_header'); ?>
-    <?load_temaplte('_signup'); ?>
-
-    <?load_temaplte('_footer'); ?>
+  <?load_temaplte('_signup'); ?>
+  <?load_temaplte('_darkmode'); ?>
+  <?load_temaplte('_footer'); ?>
 
 <script src="/snaclass/assets/dist/js/bootstrap.bundle.min.js"></script>
 
