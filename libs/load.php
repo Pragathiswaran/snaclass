@@ -1,6 +1,9 @@
 <?php
 include_once 'includes/Database.class.php';
 include_once 'includes/User.class.php';
+include_once 'includes/Session.class.php';
+
+Session::start();
 
 function load_temaplte($name){
     include $_SERVER['DOCUMENT_ROOT']."/snaclass/_template/$name.php";
