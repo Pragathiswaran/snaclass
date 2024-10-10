@@ -5,7 +5,7 @@ class Database{
 
     public static function getConnection(){
         if(Database::$conn == null){
-            $servername = "172.31.96.1";
+            $servername = "localhost";
             $username = "praga";
             $password = "password";
             $dbname = "snaclass";
