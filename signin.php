@@ -1,13 +1,13 @@
-<? include 'libs/load.php'; ?>
+<?php include 'libs/load.php'; ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
-    <?load_temaplte('_head'); ?>
+    <?php load_temaplte('_head'); ?>
   </head>
   <body>
-    <?load_temaplte('_header'); ?>
-    <?load_temaplte('_signin'); ?>
-    <?load_temaplte('_footer'); ?>
+    <?php load_temaplte('_header'); ?>
+    <?php load_temaplte('_signin'); ?>
+    <?php load_temaplte('_footer'); ?>
     <script src="/snaclass/assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

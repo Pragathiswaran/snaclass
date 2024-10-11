@@ -1,7 +1,6 @@
 <pre>
-<? 
+<?php include 'libs/load.php';
 
-include 'libs/load.php';
     // print_r($_POST); 
     // print_r($_SERVER); 
     // print_r(__FILE__);
@@ -13,11 +12,11 @@ include 'libs/load.php';
     // }
 
     $conn = Database::getConnection();
-    // if($conn){
-    //     print_r($conn);
-    // } else {
-    //     echo "Connection Failed";
-    // }
+    if($conn){
+        print_r($conn);
+    } else {
+        echo "Connection Failed";
+    }
     // $user = 'praga';
     // $pass = 'password';
     // $sql = "SELECT password FROM signin WHERE username = '$user'";
@@ -53,7 +52,12 @@ include 'libs/load.php';
     //     }
     // }
 
-    $user = new User('ramya');
+    // $user = new User('ramya');
+    // if($user){
+    //     print $user;
+    // } else {
+    //     echo "user not found";
+    // }
     // $result = $user->_get_data('bio');
     // if($result){
     //     print_r($result);
@@ -94,7 +98,8 @@ include 'libs/load.php';
 // } else {
 //     echo 'failed';
 // }
-print_r($_SERVER);
-// ?>
+// print_r($_SERVER);
+
+?>
 </pre>
 

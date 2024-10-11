@@ -7,7 +7,7 @@ include_once 'includes/UserSession.class.php';
 Session::start();
 
 function load_temaplte($name){
-    include $_SERVER['DOCUMENT_ROOT']."/snaclass/_template/$name.php";
+    include $_SERVER['DOCUMENT_ROOT']."snaclass/_template/$name.php";
 }
 
 function validate_user($username , $password ){
@@ -18,3 +18,4 @@ function validate_user($username , $password ){
     }
 }
 
+?>

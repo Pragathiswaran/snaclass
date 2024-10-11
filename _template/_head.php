@@ -9,4 +9,4 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 <link href="/snaclass/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/snaclass/css/<?=basename($_SERVER['PHP_SELF'],'.php')?>.css">
+<link rel="stylesheet" href="/snaclass/css/<?php print basename($_SERVER['PHP_SELF'],'.php')?>.css">
