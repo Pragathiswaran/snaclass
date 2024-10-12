@@ -15,7 +15,7 @@
     if($conn){
         print_r($conn);
     } else {
-        echo "Connection Failed";
+        print_r("$conn");
     }
     // $user = 'praga';
     // $pass = 'password';

@@ -24,7 +24,7 @@ if($signup){
     <main class="flex-shrink-0">
       <div class="container">
         <h1 class="mt-5">Sign-Up Failed</h1>
-        <p class="lead"><?=$error?></p>
+        <p class="lead"><?php echo $error?></p>
       </div>
     </main>
 <?php } 
