@@ -18,16 +18,16 @@ if($signup){
          <p>Use <a href="../examples/sticky-footer-navbar/">the sticky footer with a fixed navbar</a> if need be, too.</p>
       </div>`
       </main>
-    <?
+    <?php
     } else {
 ?>
     <main class="flex-shrink-0">
       <div class="container">
         <h1 class="mt-5">Sign-Up Failed</h1>
-        <p class="lead"><?=$error?></p>
+        <p class="lead"><?php echo $error?></p>
       </div>
     </main>
-<? } 
+<?php } 
 } else {?>
   <main class="form-signup w-100 m-auto">
   <form method="post" action="signup.php">
@@ -48,4 +48,4 @@ if($signup){
     </div>
     <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
   </form>
-</main> <? } ?>
+</main> <?php } ?>

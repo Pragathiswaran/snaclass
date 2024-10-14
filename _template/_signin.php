@@ -11,7 +11,7 @@
             <p>Use <a href="../examples/sticky-footer-navbar/">the sticky footer with a fixed navbar</a> if need be, too.</p>
         </div>
         </main>
-    <?
+    <?php
     } else {
 ?>
 <main class="form-signin w-100 m-auto">
@@ -38,4 +38,4 @@
     <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
   </form>
 </main>
-<? } ?>
+<?php } ?>

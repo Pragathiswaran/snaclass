@@ -5,7 +5,7 @@ class Database{
 
     public static function getConnection(){
         if(Database::$conn == null){
-            $servername = "172.31.96.1";
+            $servername = "192.168.1.3";
             $username = "praga";
             $password = "password";
             $dbname = "snaclass";
@@ -13,7 +13,7 @@ class Database{
             $conn = new mysqli($servername, $username, $password, $dbname);
 
             if($conn->connect_error){
-                die("Connection failed: " . $conn->connect_error);
+                die("Connection Failed ". $conn->connect_error);
             } else {
                 Database::$conn = $conn;
                 return Database::$conn;
@@ -22,5 +22,4 @@ class Database{
             return Database::$conn;
         }
     }
-
 }
