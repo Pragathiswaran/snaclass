@@ -1,8 +1,9 @@
 <?php
 
 class User{
+
     private $conn;
-    private $id;
+    public $id, $username;
 
     public function __construct($username){
         $this->conn = Database::getConnection();
@@ -11,10 +12,13 @@ class User{
         if($result->num_rows == 1){
             $row = $result->fetch_assoc();
             $this->id = $row['id'];
+            $this->username = $row['username'];
+            // return $row;
         } else {
             throw new Exception('Username not Found!!!');
         }
     }
+
     public static function signup ($user, $email, $pass){
         $options = [
             'cost' => 9,
@@ -61,6 +65,7 @@ class User{
             return $this->_set_data($property,$args[0]);
         }
     }
+
     private function _get_data($var){
         if(!$this->conn){
             $this->conn = Database::getConnection();
