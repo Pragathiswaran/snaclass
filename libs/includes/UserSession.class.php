@@ -28,20 +28,16 @@ class UserSession {
             $ip = $_SERVER['REMOTE_ADDR'];
             $agent = $_SERVER['HTTP_USER_AGENT'];
             $token = md5(rand(0,9999).$ip.$agent);
-            // $login_time = now();
             $sql = "INSERT INTO `session` (`uid`, `token`, `login_time`, `ip`, `user_agent`, `active`)
                     VALUES('$userid->id','$token', NOW(),'$ip','$agent','1')";
             if($conn->query($sql)){
                 Session::set('session_token',$token);
-                // echo "token created";
                  return $token;
             } else {
-                // echo "incorrect query";
                 return false;
             }
         } else {
             throw new Exception('User is invalid');
-            // return false;
         }
     }
  
@@ -51,10 +47,11 @@ class UserSession {
 
     public function authorization($token){
         $this->__construct($token);
-
-        if($_SERVER['REMOTE_ADDR'] == $this->data['ip']){
+        $time = $this->getRemainingTime();
+        if($time and $this->data['active'] == 1){
+            // print($time);
             if($_SERVER['HTTP_USER_AGENT'] == $this->data['user_agent']){
-               if($this->getRemainingTime() == true){
+               if($_SERVER['REMOTE_ADDR'] == $this->data['ip']){
                     return true;
                } else return false;
             } else return false;
@@ -68,13 +65,19 @@ class UserSession {
 
     public function getRemainingTime(){
         $tokenCreatedTime = date('H:i:s',strtotime($this->data['login_time']));
+        date_default_timezone_set('Asia/Kolkata');
         $currentTime = date('H:i:s');
 
+        // print($tokenCreatedTime . "\n");
+        // print($currentTime);
+        // echo "\n".$this->data['login_time'];
         $startTime = new DateTime($tokenCreatedTime);
         $endTime = new DateTime($currentTime);
 
         $interval = $startTime->diff($endTime);
+        // print_r($interval);
         if ($interval->h > 1 || ($interval->h == 1 && $interval->i > 0)) {
+            echo "\n time out \n";
             return false; 
         } 
         return true;

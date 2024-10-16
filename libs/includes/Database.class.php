@@ -5,14 +5,15 @@ class Database{
 
     public static function getConnection(){
         if(Database::$conn == null){
-            $servername = "192.168.1.3";
-            $username = "praga";
-            $password = "password";
-            $dbname = "snaclass";
+            $servername = set_config('DB_SERVER');
+            $username = set_config('DB_USERNAME');
+            $password = set_config('DB_PASSWORD');
+            $dbname = set_config('DB_NAME');
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
             if($conn->connect_error){
+                echo $password ? $password : '';
                 die("Connection Failed ". $conn->connect_error);
             } else {
                 Database::$conn = $conn;
