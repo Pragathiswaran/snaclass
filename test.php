@@ -1,6 +1,6 @@
 <pre>
-<?php include 'libs/load.php';
-
+<?php
+ include 'libs/load.php';
     // print_r($_POST); 
     // print_r($_SERVER); 
     // print_r(__FILE__);
@@ -11,11 +11,11 @@
     //     echo "Signup Failed";
     // }
 
-    $conn = Database::getConnection();
+    // $conn = Database::getConnection();
     // if($conn){
     //     print_r($conn);
     // } else {
-    //     print_r("$conn");
+    //     print_r($conn);
     // }
     // $user = 'praga';
     // $pass = 'password';
@@ -32,26 +32,7 @@
     // } else {
     //     echo "Query Failed";
     // }
-    // $user = 'pragathis';
-    // $pass = 'password';
-    // $result = null;
-
-    // if(Session::get('session_token')){
-    //     $userdata = Session::get('user_session');
-    //     echo "Welcome back $userdata[username]";
-    //     $result = $userdata;
-    // } else {
-    //     // Session::set('session_token',true);
-    //     $userSession = new UserSession(1);
-    //     $result = $userSession->authentication($user,$pass);
-    //     echo "No Session found!!! try to Login Now";
-    //     if($result){
-    //         Session::set('session_token',$result);
-    //         echo "Login Success";
-    //     } else {
-    //         echo "Login Failed";
-    //     }
-    // }
+   
 
     // $user = new User('ramya');
     // if($user){
@@ -164,36 +145,49 @@
 // }
 
 // $token = null;
-$userSession = new UserSession();
-$SessionToken = Session::get('session_token');
-if($SessionToken){
-    $username = Session::get('user_session');
-    print "Welcome back $username";
-    $authUser = $userSession->authorization($SessionToken);
-    if(!$authUser){
-        echo "Session invalid";
-        Session::unset();
-    }
-    // $userSession->getRemainingTime();
-} else {
-    echo "Login failed try to login again ";
-    $usertoken = $userSession->authentication('pragathis','password');
-    // print($usertoken);
-    if($usertoken){
-        echo 'Login Success';
-        // print_r($userSession);
-        $userSession1 = new UserSession($usertoken);
-        if($userSession1->uid){
-            $username1 = new User($userSession1->uid);
-            Session::set('user_session',$username1->username);
-        } else {
-            echo ' user ID not found ';
-        }
-    } else {
-        echo 'Login failed';
-    }
-}
+// $userSession = new UserSession();
+// $SessionToken = Session::get('session_token');
+// if($SessionToken){
+//     $username = Session::get('user_session');
+//     print "Welcome back $username";
+//     $authUser = $userSession->authorization($SessionToken);
+//     if(!$authUser){
+//         echo "Session invalid";
+//         Session::unset();
+//     }
+//     // $userSession->getRemainingTime();
+// } else {
+//     echo "Login failed try to login again ";
+//     $usertoken = $userSession->authentication('pragathis','password');
+//     // print($usertoken);
+//     if($usertoken){
+//         echo 'Login Success';
+//         // print_r($userSession);
+//         $userSession1 = new UserSession($usertoken);
+//         if($userSession1->uid){
+//             $username1 = new User($userSession1->uid);
+//             Session::set('user_session',$username1->username);
+//         } else {
+//             echo ' user ID not found ';
+//         }
+//     } else {
+//         echo 'Login failed';
+//     }
+// }
 
+// Encode some data with a maximum depth  of 4 (array -> array -> array -> string)
+// $json = json_encode(
+//     array(
+//         1 => array('English' => array('One','January'),'French' => array('Une','Janvier'))
+//     )
+// );
+
+// // Show the errors for different depths.
+// var_dump(json_decode($json, true, 4));
+// echo 'Last error: ', json_last_error_msg(), PHP_EOL, PHP_EOL;
+
+// var_dump(json_decode($json, true, 3));
+// echo 'Last error: ', json_last_error_msg(), PHP_EOL, PHP_EOL;
 // echo $_SERVER['REMOTE_ADDR'];   
 
 // EDGE : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
@@ -201,6 +195,23 @@ if($SessionToken){
 //CHROME : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
 
 //FIREFOX : Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0
+
+// '04af3fdb71ae551534d7f8934b8abe98'
+// $userSession = new UserSession();
+// $result = $userSession->getRemainingTime();
+
+// if($result){
+//     echo "Session is valid";
+// } else {
+//     echo "Session is invalid";
+// }
+
+// $usertoken = $userSession->authentication('pragathis','password');
+// print($usertoken);
+
+// date_default_timezone_set('Asia/Kolkata');
+// echo date("H:i:s");
+
 ?>
 </pre>
 
