@@ -199,19 +199,6 @@
 // '04af3fdb71ae551534d7f8934b8abe98'
 // $userSession = new UserSession();
 // $result = $userSession->getRemainingTime();
-
-// if($result){
-//     echo "Session is valid";
-// } else {
-//     echo "Session is invalid";
-// }
-
-// $usertoken = $userSession->authentication('pragathis','password');
-// print($usertoken);
-
-// date_default_timezone_set('Asia/Kolkata');
-// echo date("H:i:s");
-
 ?>
 </pre>
 
