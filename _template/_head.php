@@ -10,3 +10,4 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 <link href="/snaclass/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/snaclass/css/<?php print basename($_SERVER['PHP_SELF'],'.php')?>.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
