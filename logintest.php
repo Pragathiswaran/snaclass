@@ -19,7 +19,7 @@ if(!empty($SessionToken)){
     echo "Login failed try to login again ";
     $usertoken = $userSession->authentication('pragathis','password');
     // printf($usertoken);
-    if(isset($usertoken)){
+    if(!empty($usertoken)){
         echo 'Login Success';
         // print_r($userSession);
         $userSession1 = new UserSession($usertoken);

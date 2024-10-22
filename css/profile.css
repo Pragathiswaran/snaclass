@@ -1,0 +1,22 @@
+.--profile-container{
+    position: relative;
+    height: 70vh;
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+
+.--profile-avatar{
+    width: 120px;
+    height: 120px;
+    /* background-color: #808080; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0 0 5px black;
+    /* border: 1px solid black; */
+}
+
+.--profile-icon {
+    font-size: 30px;
+}
