@@ -1,6 +1,6 @@
 <?php
 
-//Database connection
+//Database connection using maria db
 class Database{
     public static $conn = null;
 
